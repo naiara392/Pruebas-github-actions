@@ -1,0 +1,20 @@
+# Nombre del flujo de trabajo, visible en la interfaz de GitHub Actions
+name: Validar Script Shell
+
+# Evento que dispara el flujo de trabajo
+on:
+  push:
+    branches:
+      - main 
+
+# Definición de los "jobs" (tareas)
+jobs:
+  shellcheck: # Nombre del job
+    runs-on: ubuntu-latest # Sistema operativo donde se ejecutará el job (máquina virtual de GitHub)
+
+    steps: # Pasos que se ejecutarán en este job
+    - name: Checkout del código # Primer paso: obtener el código del repositorio
+      uses: actions/checkout@v4 # Usa una acción predefinida de GitHub para clonar el repo
+
+    - name: Ejecutar ShellCheck # Segundo paso: ejecutar la herramienta shellcheck
+      run: shellcheck my_script.sh # Comando que se ejecutará en la máquina virtual
