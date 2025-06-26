@@ -2,5 +2,5 @@
 
 echo "Hola"
 
-# Error intencional para ver lo que sucede
-echo "Esta línea tiene un" error2
+# solucion error
+echo "Esta línea se ha corregido"
