@@ -17,5 +17,10 @@ jobs:
     - name: Checkout del código # Primer paso: obtener el código del repositorio
       uses: actions/checkout@v4 # Usa una acción predefinida de GitHub para clonar el repo
 
+    - name: Instalar ShellCheck # Paso para instalar la herramienta
+      run: |
+       sudo apt-get update
+       sudo apt-get install -y shellcheck
+
     - name: Ejecutar ShellCheck # Segundo paso: ejecutar la herramienta shellcheck
       run: shellcheck prueba-script.sh # Comando que se ejecutará en la máquina virtual
