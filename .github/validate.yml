@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main 
+  workflow_dispatch:
 
 # Definición de los "jobs" (tareas)
 jobs:
